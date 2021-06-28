@@ -1,0 +1,45 @@
+michael ndula assignment3
+/*Plurality pset3*\
+This program is for counting the plurality for a list of candidates.
+
+Enter the candidate's name as an argument when running the program for example:
+./plurality Michael Erick Jose Tasha
+The program will ask you to enter the Number of voters
+The program will ask you for your vote, It should be one of the candidates' names (Case Sensitive).
+After you enter the candidate's name the program will ask you again for your vote depend on your Number of voters.
+The program will output the winning candidate. (Could be more than one candidate if they are equal)
+
+*here is the pseudocode*
+#include cs50 libraries
+#include stdio.h libraries
+#include string.h to use string functions
+
+/*first I will create my own variable called candidate
+then declare a new struct called candidates.
+*Then create an array of candidates and make sure they do not exceed the max number.
+*initialize candidates number
+*write function prototypes like vote which stores the candidates name which is type bool.
+and print winner which is type void.
+*start my program by including arguments to be passed
+{
+   Check for invalid usage
+   *if the argument passed is less than 2 the program will exit and print the following
+      "Usage: plurality [candidate ...]\n"
+   check for the number of candidates passed 
+   *if its greater than max then the program will exit and print the below
+      "Maximum number of candidates is %i\n"
+      
+      First, when the function vote runs 
+      I'll assume that the candidate that I'm looking for does not exist 
+      so I create a new bool variable called exist 
+      and set its default value to false. 
+      Next, I create a loop to look at each candidate in candidates[i].name,
+      to do that you need to use a function called strcmp(),
+       
+      The strcmp() function compares two strings if they are equal the return value will be 0,
+     .
+So in my condition if (strcmp(name, candidates[i].name) == 0)
+if its true I'll update the candidate[i].votes and add 1 to it, 
+then I'll update the exist bool to equal true and then I'll out 
+from this loop by using break so I don't waste more time searching for the candidate.
+then at the end of the function I'll return the current exist value.
